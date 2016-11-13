@@ -1,4 +1,15 @@
-/**
- *  webapp
- *  (c) v <v>
- */
+.container, header, footer {
+	max-width: 1170px;
+	padding: 0 1rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+main {
+	padding-right: 1rem;
+}
+aside {
+	max-width: 25%;
+	padding-left: 1rem;
+}

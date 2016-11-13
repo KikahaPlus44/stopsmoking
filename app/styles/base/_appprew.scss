@@ -1,0 +1,32 @@
+.app-prew {
+	margin: 2rem 0;
+	article{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.app-text {
+		padding-left: 2rem;
+	}
+	.price-info {
+		margin-bottom: 1rem;
+		color: lighten($black, 45);
+		i {
+			padding-right: 0.5em;
+			color: $blue;
+		}
+		a {
+			padding-right: 0.5em;
+		}
+	}
+	figure {
+		min-width: 282px;
+		padding-right: 2rem;
+		padding: 1rem 2rem 1rem 0;
+	}
+
+	img {
+		max-width: 282px;
+	}
+}

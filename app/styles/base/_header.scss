@@ -1,0 +1,35 @@
+header {
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.logo  {
+	img {
+		max-width: 12rem;
+	}
+}
+nav {padding: 0.5rem;
+	a {
+		display: inline-block;
+		padding: 0.5rem;
+		
+	}
+	ul.list-inline {
+		padding-left: 1.5rem;
+		a {
+			color: lighten($black, 20);
+			&:hover {
+				color: $blue; 
+			}
+			
+		}
+		li {
+			&:last-child {
+				a {
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+}

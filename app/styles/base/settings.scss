@@ -1,114 +1,12 @@
-/*
- *
- *
- *
- * @version 3.1 eng
- */
-
-// 
-// =======================================================================//
-// AUTOSPRITES TOOLS                                                      //
-// =======================================================================//
-
-// IMAGE SPRITES
-// unncomment if you use png/jpg sprites (gulp sprites) and paste icon like <i class="icon icon-name"></i>
-// @import 'img-sprite';
-
-// .icon {
-//     display: inline-block ;
-//     position: relative;
-//     vertical-align: middle;
-//     display: -moz-inline-stack;
-//     zoom: 1;
-//     *display: inline;
-// }
-
-
-// SVG SPRITES
-// unncoment if use svg sprites (gulp svgsprites) and add sprites svg inline in index.html
-// use fore insert icon <svg class="icon icon-name">
-// <use xlink:href="#icon-name"></use></svg>
-// @import 'base/svgsprite';
-
-//SVG FONT
-// uncomment if you use svg icons font (gulp svgiconfont)  and paste icon like <i class="icon icon-name"></i>
-// @import 'base/svgicons';
-
-
 // =======================================================================//
 // CONNECTING FONTS                                                       //
 // =======================================================================//
 
 /* connecting google fonts */
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-/* connecting local fonts */
-@mixin font-face($font-family, $file-path) {
-
-    // Use http://everythingfonts.com/font-face
-    @font-face {
-        font-family: $font-family;
-        src: url('../../fonts/' + $file-path + '/' + $file-path + '.eot');
-        src: url('../../fonts/' + $file-path + '/' + $file-path + '.eot') format('embedded-opentype'),
-             url('../../fonts/' + $file-path + '/' + $file-path + '.woff2') format('woff2'),
-             url('../../fonts/' + $file-path + '/' + $file-path + '.woff') format('woff'),
-             url('../../fonts/' + $file-path + '/' + $file-path + '.ttf') format('truetype'),
-             url('../../fonts/' + $file-path + '/' + $file-path + '.svg#TTDrugsThin') format('svg');
-
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    // Chrome for Windows fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
-    @media screen and (-webkit-min-device-pixel-ratio: 0) {
-        @font-face {
-            font-family: $font-family;
-            src: url('../fonts/' + $file-path + '/' + $file-path + '.svg##{$font-family}') format('svg');
-        }
-    }
-}
-
-// =======================================================================//
-//    BACKGROUND IMAGES RESPONSIVE MIX-IN                                 //
-// =======================================================================//
-// uncomment for use responcive background, use "gulp imgresize" for create different size img.
-
-// @mixin bg-img ($bg-color, $file-name, $file-exp, $bg-size) {
-//     @media only screen and (min-width: 1301px) {
-//         background:$bg-color url('../images/' + $file-name + '.' + $file-exp) center center no-repeat;
-//         background-size: $bg-size;
-//     }
-//     @media only screen and (max-width: 1300px) {
-//         background:$bg-color url('../images/' + $file-name + '_dt' + '.' + $file-exp) center center no-repeat;
-//         background-size: $bg-size;
-//     }
-//     @media only screen and (max-width: 991px) {
-//         background:$bg-color url('../images/' + $file-name + '_md' + '.' + $file-exp) center center no-repeat;
-//         background-size: $bg-size;
-//     }
-//     @media only screen and (max-width: 481px) {
-//         background:$bg-color url('../images/' + $file-name + '_xs' + '.' + $file-exp) center center no-repeat;
-//         background-size: $bg-size;
-//     }
-// }
-
-// Add local fonts from mixin
-@include font-face(HelveticaNeue, 'HelveticaNeue');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 
 /* Identify Fonts*/
-$main-font: 'Roboto', sans-serif;
-
-
-/* Font mixin */
-@mixin font-type($font-family, $font-size, $line-height, $letter-spacing, $color) {
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $line-height;
-    letter-spacing: $letter-spacing;
-    color: $color;
-}
-
+$main-font: 'Raleway', sans-serif;
 
 // =======================================================================//
 // RESPONCIVE MIX IN                                                      //
@@ -137,12 +35,21 @@ $main-font: 'Roboto', sans-serif;
   }
 }
 
+// variables
+$black: #000;
+$blue: #29b6f6;
+$white: #fff;
 
 // =======================================================================//
 //    System-wide configuration classes and the vertical rhythm           //
 // =======================================================================//
 
-html {}
+html {
+    font-family: $main-font;
+    font-size: 16px;
+
+
+}
 
 body {
 
@@ -154,14 +61,6 @@ button, select {-webkit-appearance: none;}
 
 /* ALL IMAGE ARE RESPONCIVE */
 img {width: 100%; height: auto;}
-
-/* IMG STYLE
-----------------
-.img-responsive -
-.img-rounded -
-.img-circle -
-.img-thumbnail -
-*/
 
 
 /* SYSTEM MODIFICATORS */
@@ -175,44 +74,19 @@ img {width: 100%; height: auto;}
 /* FLOAT CLEAR */
 .clear {clear: both;}
 
-// =======================================================================//
-// BACKGROUNDS                                                            //
-// =======================================================================//
-
 
 // =======================================================================//
 // TYPOGRAPHY STYLE                                                       //
 // =======================================================================//
 
 /* PARAGRAPH */
-p {}
-
-/* <p> like H */
-.lead {}
-
-/* PARAGRAPH STYLE
-----------------
-<p> color modificators
-.text-muted {}
-.text-primary {}
-.text-success {}
-.text-info {}
-.text-warning {}
-.text-danger {}
-
-<p> with background in BLOCK mode
-.bg-primary {}
-.bg-success {}
-.bg-info {}
-.bg-warning {}
-.bg-danger {}
-
-use a system class alignment <p>
-.text-left {}
-.text-center {}
-.text-right {}
-.text-justify {}
-*/
+p {
+    font-family: $main-font;
+    color: lighten($black, 45);
+    line-height: 1.35;
+    letter-spacing: 1px;
+    margin-bottom: 0.5em;    
+}
 
 small, .small {}
 strong, .strong {}
@@ -221,42 +95,37 @@ em, .em {}
 a {
     &:hover, &:focus, &:active, &:active:focus {outline: none;}
     text-decoration: none;
-
-    &:hover {}
-    &:active {}
+    color: lighten($black, 45);
+    font-family: $main-font;
+    &:hover {
+        color: $blue;
+    }
+    &:active {
+        color: $blue;
+    }
+    transition: all 0.3s;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-
+h1, h2, h3 {
+    margin: 0.5rem 0 1rem 0;
+    color: lighten($black, 20);
+    a {
+        color: inherit!important;
+        color: in
+    }
 }
 
-h1, .h1 {
-
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
 }
-
-h2, .h2 {
-
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
-
-h3, .h3 {
-
-}
-
-h4, .h4 {
-
-}
-
-h5, .h5 {
-
-}
-
-h6, .h6 {
-
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* address */
@@ -265,85 +134,46 @@ address, .address {
     strong {}
     a {}
 }
-
-/* for some reason use title="" inside <abbr>.
-   Add .initialism for make font smaller. */
-abbr, .abbr {
-
-}
-
-/* add .blockquote-reverse for right align. */
-blockquote {
-
-    /* use <p> inside <blockquote>  */
-    p {}
-
-    footer {}
-
-    /* <cite title="Source Title">Source Title</cite> */
-    cite {}
-}
-
-/* System class for list .list-unstyled and .list-inline */
-ul {
+// lists
+.list-inline {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
     li {
+        display: inline-block;
     }
 }
-
-ol {
-    li {}
-}
-
-
-/* ocation of terms and their definitions side by side in a line using .dl-horizontal () */
-dl {
-    dt {}
-    dd {}
-}
-
-/* Styling code and markings */
-pre {}
-code {}
-kbd {}
-mark {}
-
 // =======================================================================//
-// TABLE                                                               //
+// BUTTONS                                                                //
 // =======================================================================//
-
-/* wrapp responsive table */
-.table-responsive {}
-
-/* Table styles
-----------------
-.active
-.success - green
-.warning - yellow
-.danger - red
-.info - blue
-*/
-
-.table {
-    thead {
-        tr {
-            th {}
-        }
-    }
-    tbody {
-        tr {
-            td {}
-        }
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+}
+.btn-more {
+    margin: 0.5rem 0;
+    border: 2px solid lighten($black, 20);
+    color: lighten($black, 20);
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-radius: 4px;
+    &:hover, &:active, &:focus, &:active:focus {
+        background: $blue;
+        border: 2px solid $blue;
+        color: $white;
     }
 }
-
-/* Additional classes for tables
-----------------
-.table-striped
-.table-bordered
-.table-hover
-.table-condensed
-*/
-
 // =======================================================================//
 // FORMS                                                                  //
 // =======================================================================//
@@ -446,53 +276,9 @@ HTML5 input types: text, text, datetime, datetime-local, date, month, time, week
     }
 }
 
-// =======================================================================//
-// BUTTONS                                                                //
-// =======================================================================//
-
-.btn-submit {
-    &:hover, &:active, &:focus, &:active:focus {}
-}
-
-.btn-default {
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:active:focus {}
-
-}
-
-.btn-primary {
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:active:focus {
-
-    }
-}
-
-.btn-second {
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:active:focus {
-
-    }
-}
-
-.btn-next {
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:active:focus {
 
 
-    }
-}
+
 
 
 
